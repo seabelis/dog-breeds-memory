@@ -1,6 +1,6 @@
-const initialState = 'hello world'
-const reducer = (state = initialState, action = {}) => {
-    return state
-}
+import { combineReducers } from 'redux'
+import breeds from './breeds'
 
-export default reducer
+export default combineReducers({
+  breeds
+})

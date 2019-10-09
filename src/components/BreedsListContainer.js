@@ -3,26 +3,21 @@ import * as request from 'superagent'
 import BreedsList from './BreedsList'
 import {connect} from 'react-redux'
 // import { helloWorld } from '../actions/test'
-import { addBreed } from '../actions/ADD_BREED'
+import { setBreedsList } from '../actions/breeds'
 
+
+//use this.props instead of this.state
 
 
 class BreedsListContainer extends React.Component {
-  state = {}
 
-  componentDidMount() {
+componentDidMount() {
     request('https://dog.ceo/api/breeds/list/all')
-      .then(response => this.setState({ breeds: Object.keys(response.body.message) }))
-      this.props.addBreed('Test Breed')
-    //If we bind action creators using connect, this.props.dispatch is no longer available.
-
-
-
+      .then(response => this.props.setBreedsList(Object.keys(response.body.message) ))
   }
-
   render() {
-    if (!this.state.breeds) return 'Loading...'
-    return <BreedsList breeds={this.state.breeds} />    
+    if (!this.props.breeds) return 'Loading...'
+    return <BreedsList breeds={this.props.breeds} />    
   }
 }
 // export default connect(null, { helloWorld: helloWorld })(BreedsListContainer)
@@ -35,6 +30,6 @@ const mapStateToProps = state => {
   
   export default connect(
     mapStateToProps,
-    { addBreed: addBreed }
+    { setBreedsList: setBreedsList }
   )(BreedsListContainer);
 

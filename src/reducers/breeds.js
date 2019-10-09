@@ -1,9 +1,9 @@
-import { addBreed, ADD_BREED } from '../actions/ADD_BREED';
+import { setBreeds, SET_BREEDS } from '../actions/breeds';
 
 export default (state = [], action = {}) => {
     switch (action.type) {
-        case "ADD_BREED":
-          return [...state, { ...action.payload }];
+        case SET_BREEDS:
+            return [...state, {...action.payload}];
         default:
             return state;
   }

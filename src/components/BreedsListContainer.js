@@ -13,8 +13,11 @@ class BreedsListContainer extends React.Component {
 
 componentDidMount() {
     request('https://dog.ceo/api/breeds/list/all')
-      .then(response => this.props.setBreedsList(Object.keys(response.body.message) ))
+      .then(response => 
+        this.props.setBreedsList(Object.keys(response.body.message)) 
+      )
   }
+  
   render() {
     if (!this.props.breeds) return 'Loading...'
     return <BreedsList breeds={this.props.breeds} />    

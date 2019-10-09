@@ -3,6 +3,7 @@ import './App.css';
 import store from './store'
 import {Provider} from 'react-redux';
 import BreedsListContainer from './components/BreedsListContainer'
+
 class App extends React.Component {
 render() {
   return (
@@ -18,3 +19,5 @@ render() {
 }
 }
 export default App;
+
+

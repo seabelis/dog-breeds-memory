@@ -1,3 +1,10 @@
+import { addBreed, ADD_BREED } from '../actions/ADD_BREED';
+
 export default (state = [], action = {}) => {
-    return state
+    switch (action.type) {
+        case "ADD_BREED":
+          return [...state, { ...action.payload }];
+        default:
+            return state;
   }
+}

@@ -12,7 +12,7 @@ class BreedDetailsContainer extends React.Component {
        .get(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images/random/10`)
        .then(response => {
            const images = (response.body.message)
-           console.log('images from api',images)
+          //  console.log('images from api',images)
            this.props.selectBreed(images)
        })
        .catch(console.error)
@@ -24,9 +24,9 @@ class BreedDetailsContainer extends React.Component {
   }
 
   render() {
-    const breed = this.props.breed
-    console.log( breed )
-    console.log('images : ',this.props.images )
+    // const breed = this.props.breed
+    // console.log( breed )
+    // console.log('images : ',this.props.images )
     // if (!breed) return null
     return <BreedDetails images={this.props.images} match={this.props.match} />
   }

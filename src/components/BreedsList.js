@@ -1,4 +1,6 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
+
 
 export default function BreedsList(props) {
     console.log(props.breeds[0])
@@ -8,7 +10,8 @@ export default function BreedsList(props) {
     <p>    There are { props.breeds.length } dog breeds.</p>
     <ul>
         { props.breeds.map((breed) => {
-            return <li key={ breed }>{ breed } </li>
+            return <li key={ breed }>
+            {<Link to={ `/dog-breeds/${breed}` }>{breed}</Link>}</li>
         })}
     </ul>
   </div>)

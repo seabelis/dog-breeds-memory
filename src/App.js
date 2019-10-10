@@ -3,6 +3,9 @@ import './App.css';
 import store from './store'
 import {Provider} from 'react-redux';
 import BreedsListContainer from './components/BreedsListContainer'
+import { Route } from 'react-router-dom'
+import BreedDetails from './components/BreedDetails';
+
 
 class App extends React.Component {
 render() {
@@ -11,7 +14,9 @@ render() {
       <div className="App">
         <main>
         <h1 className="App-title">Breeds of Dogs</h1>
-          <BreedsListContainer />
+        <Route exact path="/" component={BreedsListContainer} />
+        <Route path="/dog-breeds/:breed" component={BreedDetails} />
+
         </main>
       </div>
     </Provider>

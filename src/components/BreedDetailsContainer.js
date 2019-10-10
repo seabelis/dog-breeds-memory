@@ -2,16 +2,18 @@ import React from 'react'
 import { connect } from 'react-redux'
 import BreedDetails from './BreedDetails'
 import request from 'superagent'
+import {selectBreed} from '../actions/selectBreed'
 
 class BreedDetailsContainer extends React.Component {
 
   componentDidMount() {
-    const breed = this.props.match.params.breed // this work only with Route:  "/dog-breeds/:breed"
+    const breed = this.props.match.params.breed // corresponds to:  "/dog-breeds/:breed"
      request
        .get(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images/random/10`)
        .then(response => {
-           const breedImages = (response.body.message)
-           this.props.dispatch(selectBreed(breedImages))
+           const images = (response.body.message)
+           console.log('images',images)
+           this.props.selectBreed(images)
        })
        .catch(console.error)
 
@@ -27,20 +29,18 @@ class BreedDetailsContainer extends React.Component {
   }
 
   render() {
+    // console.log('images : ',this.props.images )
     const breed = this.props.breed
     if (!breed) return null
 
-    return <BreedDetails breed={breed} />
+    return <BreedDetails images={this.props.images} />
   }
 }
 
 const mapStateToProps = (state) => {
-  if (state.selectedBreed !== null) {
     return {
-      breed: state.breeds.find(breed => breed === state.selectedBreed)
+      images: state.selectBreed
     }
-  }
-  return {}
 }
 
-export default connect(mapStateToProps)(BreedDetailsContainer)
+export default connect(mapStateToProps,{selectBreed})(BreedDetailsContainer)

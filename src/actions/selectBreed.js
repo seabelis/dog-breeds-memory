@@ -1,7 +1,7 @@
 export const SELECT_BREED = 'SELECT_BREED'
 
-export const selectBreed = (breed) => ({
+export const selectBreed = (images) => ({
     type: SELECT_BREED,
-    payload: breed
+    payload: images
   
 })

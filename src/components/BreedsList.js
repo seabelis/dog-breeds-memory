@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 export default function BreedsList(props) {
-    console.log(props.breeds[0])
+    // console.log(props.breeds[0])
 
   return (<div>
     <h1>All Breeds</h1>

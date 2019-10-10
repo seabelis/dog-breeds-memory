@@ -7,12 +7,18 @@ export default function BreedDetails(props) {
   return (<div>
     <h2>{ breed }</h2>
     This page will show images of the { props.match.params.breed } breed.
-
+{/* 
     <ul>
-      {/* { breed.map(breed =>
+      { breed.map(breed =>
         <li key={ breed }>{ breed }</li>
-      ) } */}
-    </ul>
+      ) }
+    </ul> */}
     <Link to="/">Go back to the index</Link>
+    <div>
+      { props.images && props.images.map(url => <img src={ url } alt="Dog" />) }
+      { !props.images && 'Loading...' }
+    </div>
   </div>)
+
+      
 }

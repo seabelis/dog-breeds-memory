@@ -6,7 +6,7 @@ export default function BreedDetails(props) {
   const breed = props.breed
   return (<div>
     <h2>{ breed }</h2>
-    This page will show images of a specific dog breed.
+    This page will show images of the { props.match.params.breed } breed.
 
     <ul>
       {/* { breed.map(breed =>

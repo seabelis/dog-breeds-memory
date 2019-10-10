@@ -4,8 +4,8 @@ import store from './store'
 import {Provider} from 'react-redux';
 import BreedsListContainer from './components/BreedsListContainer'
 import { Route } from 'react-router-dom'
-// import BreedDetails from './components/BreedDetails';
-import BreedDetailsContainer from './components/BreedDetailsContainer';
+import BreedDetailsContainer from './components/BreedDetailsContainer'
+import GamesContainer from './components/GamesContainer'
 
 
 class App extends React.Component {
@@ -14,9 +14,11 @@ render() {
     <Provider store={store}>
       <div className="App">
         <main>
-        <h1 className="App-title">Breeds of Dogs</h1>
+        <h1 className="App-title">Breeds of Dogs Quiz</h1>
         <Route exact path="/" component={BreedsListContainer} />
-        <Route path="/dog-breeds/:breed" component={BreedDetailsContainer} />
+        <Route path="/dog-breed/:breed" component={BreedDetailsContainer} />
+        <Route path="/games/" component={GamesContainer} />
+
 
         </main>
       </div>

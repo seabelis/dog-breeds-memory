@@ -7,7 +7,7 @@ import {selectBreed} from '../actions/selectBreed'
 class BreedDetailsContainer extends React.Component {
 
   componentDidMount() {
-    const breed = this.props.match.params.breed // corresponds to:  "/dog-breeds/:breed"
+    const breed = this.props.match.params.breed // corresponds to:  "/dog-breed/:breed"
      request
        .get(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images/random/10`)
        .then(response => {

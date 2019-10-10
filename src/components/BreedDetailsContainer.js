@@ -12,16 +12,11 @@ class BreedDetailsContainer extends React.Component {
        .get(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images/random/10`)
        .then(response => {
            const images = (response.body.message)
-           console.log('images',images)
+           console.log('images from api',images)
            this.props.selectBreed(images)
        })
        .catch(console.error)
 
-
-    // request('https://dog.ceo/api/breed/{ breed }/images/random/10')
-    //   .then(response => 
-    //     this.props.setImages(Object.keys(response.body.message)) 
-    //   )
   }
 
   selectBreed(breed) {
@@ -29,17 +24,17 @@ class BreedDetailsContainer extends React.Component {
   }
 
   render() {
-    // console.log('images : ',this.props.images )
     const breed = this.props.breed
-    if (!breed) return null
-
-    return <BreedDetails images={this.props.images} />
+    console.log( breed )
+    console.log('images : ',this.props.images )
+    // if (!breed) return null
+    return <BreedDetails images={this.props.images} match={this.props.match} />
   }
 }
 
 const mapStateToProps = (state) => {
     return {
-      images: state.selectBreed
+      images: state.selectedBreed
     }
 }
 

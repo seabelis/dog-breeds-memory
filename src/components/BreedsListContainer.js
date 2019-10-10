@@ -12,15 +12,19 @@ import { setBreedsList } from '../actions/breeds'
 class BreedsListContainer extends React.Component {
 
 componentDidMount() {
-    request('https://dog.ceo/api/breeds/list/all')
+    request
+      .get('https://dog.ceo/api/breeds/list/all')
       .then(response => 
         this.props.setBreedsList(Object.keys(response.body.message)) 
       )
   }
   
   render() {
+
     if (!this.props.breeds) return 'Loading...'
-    return <BreedsList breeds={this.props.breeds} />    
+
+    return (
+          <BreedsList breeds={this.props.breeds} /> )   
   }
 }
 // export default connect(null, { helloWorld: helloWorld })(BreedsListContainer)

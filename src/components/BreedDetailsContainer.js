@@ -23,6 +23,8 @@ class BreedDetailsContainer extends React.Component {
     console.log('selected breed:', breed)
   }
 
+  // Retrieves the data from the API.
+  
   render() {
     // const breed = this.props.breed
     // console.log( breed )

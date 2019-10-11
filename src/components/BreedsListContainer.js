@@ -22,7 +22,7 @@ componentDidMount() {
   render() {
 
     if (!this.props.breeds) return 'Loading...'
-
+    // if no breeds in data show loading message
     return (
           <BreedsList breeds={this.props.breeds} /> )   
   }

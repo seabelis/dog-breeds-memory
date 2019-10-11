@@ -10,9 +10,11 @@ export default function BreedsList(props) {
     <h2>All Breeds</h2>
     <p>There are { props.breeds.length } dog breeds.</p>
     { props.breeds.map((breed) => {
-      return <p key={ breed }>
-      {<Link to={ `/dog-breed/${breed}` }>{breed}</Link>}</p>
+      return <div key={ breed }>
+      {<Link to={ `/breed/${breed}` }>{breed}</Link>}</div>
     })}
 
   </div>)
 }
+//games is the path assigned to the GamesContainer and is displayed when user clicks the link.
+//breed/${breed} is the path assigned to the BreedDetailsContainer and is displayed when user clicks the link. The type of breed is specified by ${breed} which is passed from the name of the specific breed clicked. 

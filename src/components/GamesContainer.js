@@ -14,7 +14,7 @@ class GamesContainer extends React.Component {
            // I am setting this up for game 1 where three breeds are displayed. I realize this might not be the way to set it up for incremental difficulty and that the number of random images would somehow have to be changed dynamically according to the player's performance.
            .then(response => {
                 const image = (response.body.message)
-                console.log('image from api',image)
+                // console.log('image from api',image)
                 this.props.setBreedsList(image)
            })
            .catch(console.error)
@@ -22,6 +22,8 @@ class GamesContainer extends React.Component {
       }
 
     render() {
+        if (!this.props.breeds) return 'Loading...'
+        // if no breeds in data show loading message
         return <Game1 />
     }
 

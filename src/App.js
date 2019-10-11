@@ -16,7 +16,7 @@ render() {
         <main>
         <h1 className="App-title">Breeds of Dogs Quiz</h1>
         <Route exact path="/" component={BreedsListContainer} />
-        <Route path="/dog-breed/:breed" component={BreedDetailsContainer} />
+        <Route path="/breed/:breed" component={BreedDetailsContainer} />
         <Route path="/games/" component={GamesContainer} />
 
 

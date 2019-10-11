@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 
-
+// contains markup and retrieve data via the props
 export default function BreedsList(props) {
     // console.log(props.breeds[0])
 

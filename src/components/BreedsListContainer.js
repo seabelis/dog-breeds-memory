@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 // import { helloWorld } from '../actions/test'
 import { setBreedsList } from '../actions/breeds'
 
-
+  // Retrieves the data from the API.
 //use this.props instead of this.state
 
 
